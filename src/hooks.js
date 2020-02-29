@@ -20,7 +20,9 @@ const useAxios = url => {
     setValue(oldValue => [...oldValue, {...response.data, id: uuid()}]);
   };
 
-  return [value, addElement];
+  const emptyElements = () => setValue([]);
+
+  return [value, addElement, emptyElements];
 }
 
 export {
